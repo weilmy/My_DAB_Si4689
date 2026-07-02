@@ -219,3 +219,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Laufzeit-generierte Nutzungsdaten
+assets/DB/music_data.sqlite
