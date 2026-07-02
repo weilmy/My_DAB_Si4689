@@ -192,6 +192,16 @@ Auf echter Hardware wurden vier Fälle empirisch verifiziert:
 - mutagen (MP3-ID3-Tags, Cover-Art für den Player)
 - Pillow (PIL, Bild-Assets in der GUI)
 
+## Konfiguration
+
+Das EPG-Widget (`page_07.py`) und der Schweizer Verkehrsfunk (`page_08.py`) benötigen Zugangsdaten für die [opentransportdata.swiss](https://opentransportdata.swiss/de/)-API. Diese liegen **nicht** im Repository (Secrets).
+
+```bash
+cp assets/epg_config.example.py assets/epg_config.py
+```
+
+Anschliessend in `assets/epg_config.py` die eigenen Werte eintragen (`EPG_CLIENT_ID`, `EPG_CLIENT_SECRET`, `API_TOKEN`). Zugangsdaten können kostenlos unter opentransportdata.swiss beantragt werden.
+
 ## Installation
 
 ```bash
@@ -233,7 +243,7 @@ tabulate==0.10.0
 
 ## Lizenz
 
-MIT
+MIT License – siehe [LICENSE](LICENSE).
 
 ## Status
 
