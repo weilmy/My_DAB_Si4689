@@ -222,3 +222,4 @@ __marimo__/
 
 # Laufzeit-generierte Nutzungsdaten
 assets/DB/music_data.sqlite
+assets/epg_config.py
