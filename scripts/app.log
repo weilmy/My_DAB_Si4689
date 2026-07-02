@@ -1,0 +1,88 @@
+2026-05-08 20:18:38,621 - CRITICAL - Unbehandelter Fehler: no display name and no $DISPLAY environment variable
+Traceback (most recent call last):
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 1251, in <module>
+    app = App()
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 263, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 2462, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: no display name and no $DISPLAY environment variable
+2026-05-08 20:27:27,236 - CRITICAL - Unbehandelter Fehler: no display name and no $DISPLAY environment variable
+Traceback (most recent call last):
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 1251, in <module>
+    app = App()
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 263, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 2462, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: no display name and no $DISPLAY environment variable
+2026-05-08 20:32:50,666 - CRITICAL - Unbehandelter Fehler: no display name and no $DISPLAY environment variable
+Traceback (most recent call last):
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 1251, in <module>
+    app = App()
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 263, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 2462, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: no display name and no $DISPLAY environment variable
+2026-06-03 16:01:35,151 - CRITICAL - Unbehandelter Fehler: invalid color name "#lightblue"
+Traceback (most recent call last):
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 1702, in <module>
+    app = App()
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 408, in __init__
+    frame = PageClass(parent=container, controller=self)
+  File "/home/weilmy/My_DAB_Si4689/pages/main_page.py", line 61, in __init__
+    self.build_gui()
+    ~~~~~~~~~~~~~~^^
+  File "/home/weilmy/My_DAB_Si4689/pages/main_page.py", line 66, in build_gui
+    self.gui_controller.build_gui()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/weilmy/My_DAB_Si4689/pages/main_page.py", line 238, in build_gui
+    self.create_radio_buttons()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/weilmy/My_DAB_Si4689/pages/main_page.py", line 363, in create_radio_buttons
+    text1 = ttk.Label(sl_header_frame, text="Senderliste", font=('Calibri', 11), foreground="#lightblue", background='#237E71')
+  File "/usr/lib/python3.13/tkinter/ttk.py", line 739, in __init__
+    Widget.__init__(self, master, "ttk::label", kw)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/tkinter/ttk.py", line 534, in __init__
+    tkinter.Widget.__init__(self, master, widgetname, kw=kw)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 2777, in __init__
+    self.tk.call(
+    ~~~~~~~~~~~~^
+        (widgetName, self._w) + extra + self._options(cnf))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_tkinter.TclError: invalid color name "#lightblue"
+2026-06-08 23:48:53,910 - CRITICAL - Unbehandelter Fehler: '_tkinter.tkapp' object has no attribute 'config_data'
+Traceback (most recent call last):
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 2016, in <module>
+    app = App()
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 341, in __init__
+    self._load_ta_volume()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 970, in _load_ta_volume
+    path = self.config_data["dab_state_file"]
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 2549, in __getattr__
+    return getattr(self.tk, attr)
+AttributeError: '_tkinter.tkapp' object has no attribute 'config_data'
+2026-06-08 23:49:39,673 - CRITICAL - Unbehandelter Fehler: '_tkinter.tkapp' object has no attribute 'config_data'
+Traceback (most recent call last):
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 2094, in <module>
+    app = App()
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 342, in __init__
+    self._load_ta_volume()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 983, in _load_ta_volume
+    path = self.config_data["dab_state_file"]
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 2549, in __getattr__
+    return getattr(self.tk, attr)
+AttributeError: '_tkinter.tkapp' object has no attribute 'config_data'

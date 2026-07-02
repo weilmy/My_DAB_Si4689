@@ -1,0 +1,211 @@
+[2026-06-10 09:23:01] Ziel: BERN1  Kanal=8B  SID=0x4F08  Comp=0x3
+[2026-06-10 09:23:01] Initialisiere Si4689 (DAB) ...
+[2026-06-10 09:23:06] DAB_ANNOUNCEMENT_ENABLE = 0x07FF (alle Typen)
+[2026-06-10 09:23:06] Baue EId->Kanal-Map ...
+[2026-06-10 09:23:06]   7D: EId=0x4200 ''
+[2026-06-10 09:23:07]   8B: EId=0x4203 ''
+[2026-06-10 09:23:08]   10A: EId=0x4409 ''
+[2026-06-10 09:23:08]   12A: EId=0x4041 ''
+[2026-06-10 09:23:09]   12C: EId=0x4001 'SRG SSR D01'
+[2026-06-10 09:23:09] Stelle auf BERN1 und starte Dienst ...
+[2026-06-10 09:23:09] Lock OK: FIC=100%  RSSI=46 dBuV. Überwache Announcement-Queue (1 Hz). Strg-C zum Beenden.
+[2026-06-10 09:23:10] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:11] ANNO START | cluster=0x3D | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x4F08 ID2=0x0003 | q=0
+[2026-06-10 09:23:11]   *** ZIELSENDER (lokal in 8B): BERN1  (comp=0x0003)
+[2026-06-10 09:23:12] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:13] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:14] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:15] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:16] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:17] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:18] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:19] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:20] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:21] 0xB6-Read-Fehler: Si4689 meldet Kommandofehler (Status=0xC1).
+[2026-06-10 09:23:22] Beendet durch Benutzer (Strg-C).
+[2026-06-10 09:23:22] SPI geschlossen (GPIO-Pins unverändert).
+[2026-06-10 09:30:14] Ziel: BERN1  Kanal=8B  SID=0x4F08  Comp=0x3
+[2026-06-10 09:30:14] Initialisiere Si4689 (DAB) ...
+[2026-06-10 09:30:19] DAB_ANNOUNCEMENT_ENABLE = 0x07FF (alle Typen)
+[2026-06-10 09:30:19] Baue EId->Kanal-Map ...
+[2026-06-10 09:30:20]   7D: EId=0x4200 ''
+[2026-06-10 09:30:20]   8B: EId=0x4203 ''
+[2026-06-10 09:30:21]   10A: EId=0x4409 'DIG D04 - BE'
+[2026-06-10 09:30:22]   12A: EId=0x4041 'SRG SSR F01'
+[2026-06-10 09:30:22]   12C: EId=0x4001 ''
+[2026-06-10 09:30:22] Stelle auf BERN1 und starte Dienst ...
+[2026-06-10 09:30:23] Lock OK: FIC=100%  RSSI=44 dBuV. Warte auf Durchsage (anno-Flag, 1 Hz). Strg-C zum Beenden.
+[2026-06-10 09:30:25] ANNO: Durchsage AKTIV erkannt.
+[2026-06-10 09:30:25] ANNO START | cluster=0x3D | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x4F08 ID2=0x0003
+[2026-06-10 09:30:25]   *** ZIELSENDER (lokal in 8B): BERN1  (comp=0x0003)
+[2026-06-10 09:31:07] ANNO: Durchsage beendet.
+[2026-06-10 09:35:23] ... aktiv. FIC=100% RSSI=45dBuV audio=0.0dBFS mute=nein
+[2026-06-10 09:40:23] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 09:45:23] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 09:50:23] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 09:55:24] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:00:25] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:05:26] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:10:27] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:15:28] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:20:29] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:25:29] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:30:29] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:35:29] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:40:29] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:45:29] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:50:29] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 10:55:29] ... aktiv. FIC=100% RSSI=37dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:00:29] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:05:29] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:10:29] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:15:29] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:20:30] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:25:30] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:30:30] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:35:30] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:40:30] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:45:31] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:50:32] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 11:55:32] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:00:33] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:05:34] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:10:35] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:15:35] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:20:36] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:25:37] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:30:37] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:35:38] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:40:39] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:45:39] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:50:40] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 12:55:41] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:00:42] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:05:42] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:10:43] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:15:44] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:20:45] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:25:45] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:30:45] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:35:45] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:40:46] ... aktiv. FIC=100% RSSI=42dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:45:46] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:50:46] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 13:55:46] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:00:46] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:05:46] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:10:46] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:15:46] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:20:46] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:25:46] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:30:46] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:35:47] ... aktiv. FIC=100% RSSI=37dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:40:47] ... aktiv. FIC=100% RSSI=37dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:45:47] ... aktiv. FIC=100% RSSI=37dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:50:47] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 14:55:47] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:00:47] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:02:38] ANNO: Durchsage AKTIV erkannt.
+[2026-06-10 15:02:38] ANNO STOP  | cluster=0x3D | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x4F08 ID2=0x0003
+[2026-06-10 15:02:38] ANNO START | cluster=0x3D | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x4F08 ID2=0x0003
+[2026-06-10 15:02:38]   *** ZIELSENDER (lokal in 8B): BERN1  (comp=0x0003)
+[2026-06-10 15:02:58] ANNO: Durchsage beendet.
+[2026-06-10 15:05:47] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:10:47] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:15:47] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:19:33] Beendet durch Benutzer (Strg-C).
+[2026-06-10 15:19:33] SPI geschlossen (GPIO-Pins unverändert).
+[2026-06-10 15:20:48] Ziel: BERN1  Kanal=8B  SID=0x4F08  Comp=0x3
+[2026-06-10 15:20:48] Initialisiere Si4689 (DAB) ...
+[2026-06-10 15:20:53] INT-Quellen: INT_CTL=0x2000 EVENT_SRC=0x0010 ANN_EN=0x07FF
+[2026-06-10 15:20:53] Baue EId->Kanal-Map ...
+[2026-06-10 15:20:55]   7D: EId=0x4200 ''
+[2026-06-10 15:20:56]   8B: EId=0x4203 ''
+[2026-06-10 15:20:57]   10A: EId=0x4409 ''
+[2026-06-10 15:20:57]   12A: EId=0x4041 ''
+[2026-06-10 15:20:58]   12C: EId=0x4001 ''
+[2026-06-10 15:20:58] Stelle auf BERN1 und starte Dienst ...
+[2026-06-10 15:20:58] INT aktiv: FALLING auf GPIO23 (Pegel jetzt HIGH).
+[2026-06-10 15:20:58] Lock OK: FIC=100%  RSSI=40 dBuV. Warte auf Durchsage (INT/annoint). Strg-C zum Beenden.
+[2026-06-10 15:25:58] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:30:59] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:35:59] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:40:59] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:45:59] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:50:59] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 15:55:59] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:00:59] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:02:33] IRQ: annoint=True anno=True
+[2026-06-10 16:02:33] ANNO START | cluster=0x3D | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x4F08 ID2=0x0003
+[2026-06-10 16:02:33]   *** ZIELSENDER (lokal in 8B): BERN1  (comp=0x0003)
+[2026-06-10 16:02:50] IRQ: annoint=True anno=False
+[2026-06-10 16:02:50] ANNO STOP  | cluster=0x3D | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x4F08 ID2=0x0003
+[2026-06-10 16:05:59] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:10:59] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:15:59] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:20:59] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:25:59] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:30:59] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:31:16] IRQ: annoint=True anno=True
+[2026-06-10 16:31:16] ANNO START | cluster=0x3D | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x4F08 ID2=0x0003
+[2026-06-10 16:31:16]   *** ZIELSENDER (lokal in 8B): BERN1  (comp=0x0003)
+[2026-06-10 16:31:37] IRQ: annoint=True anno=False
+[2026-06-10 16:31:37] ANNO STOP  | cluster=0x3D | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x4F08 ID2=0x0003
+[2026-06-10 16:36:00] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:41:00] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:46:00] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:51:00] ... aktiv. FIC=100% RSSI=41dBuV audio=0.0dBFS mute=nein
+[2026-06-10 16:56:00] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:01:00] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:06:00] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:11:00] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:16:00] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:16:17] Beendet durch Benutzer (Strg-C).
+[2026-06-10 17:16:17] SPI geschlossen (GPIO-Pins unverändert, kein cleanup).
+[2026-06-10 17:16:54] Ziel: Swiss Pop+  Kanal=12A  SID=0x42F1  Comp=0xD
+[2026-06-10 17:16:54] Initialisiere Si4689 (DAB) ...
+[2026-06-10 17:16:59] INT-Quellen: INT_CTL=0x2000 EVENT_SRC=0x0010 ANN_EN=0x07FF
+[2026-06-10 17:16:59] Baue EId->Kanal-Map ...
+[2026-06-10 17:16:59]   7D: EId=0x4200 ''
+[2026-06-10 17:17:00]   8B: EId=0x4203 ''
+[2026-06-10 17:17:01]   10A: EId=0x4409 ''
+[2026-06-10 17:17:02]   12A: EId=0x4041 'SRG SSR F01'
+[2026-06-10 17:17:03]   12C: EId=0x4001 ''
+[2026-06-10 17:17:03] Stelle auf Swiss Pop+ und starte Dienst ...
+[2026-06-10 17:17:03] INT aktiv: FALLING auf GPIO23 (Pegel jetzt HIGH).
+[2026-06-10 17:17:03] Lock OK: FIC=100%  RSSI=28 dBuV. Warte auf Durchsage (INT/annoint). Strg-C zum Beenden.
+[2026-06-10 17:17:53] Beendet durch Benutzer (Strg-C).
+[2026-06-10 17:17:53] SPI geschlossen (GPIO-Pins unverändert, kein cleanup).
+[2026-06-10 17:19:26] Ziel: Swiss Pop+  Kanal=12C  SID=0x42F1  Comp=0x10
+[2026-06-10 17:19:26] Initialisiere Si4689 (DAB) ...
+[2026-06-10 17:19:31] INT-Quellen: INT_CTL=0x2000 EVENT_SRC=0x0010 ANN_EN=0x07FF
+[2026-06-10 17:19:31] Baue EId->Kanal-Map ...
+[2026-06-10 17:19:35]   7D: EId=0x4200 'SMC D02'
+[2026-06-10 17:19:35]   8B: EId=0x4203 ''
+[2026-06-10 17:19:36]   10A: EId=0x4409 ''
+[2026-06-10 17:19:36]   12A: EId=0x4041 ''
+[2026-06-10 17:19:37]   12C: EId=0x4001 'SRG SSR D01'
+[2026-06-10 17:19:37] Stelle auf Swiss Pop+ und starte Dienst ...
+[2026-06-10 17:19:38] INT aktiv: FALLING auf GPIO23 (Pegel jetzt HIGH).
+[2026-06-10 17:19:38] Lock OK: FIC=100%  RSSI=38 dBuV. Warte auf Durchsage (INT/annoint). Strg-C zum Beenden.
+[2026-06-10 17:24:38] ... aktiv. FIC=100% RSSI=39dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:28:39] IRQ: annoint=True anno=True
+[2026-06-10 17:28:39] ANNO START | cluster=0x42 | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x48B1 ID2=0x0007
+[2026-06-10 17:28:39]   *** ZIELSENDER (lokal in 12C): SRF 1 ZH SH+  (comp=0x0007)
+[2026-06-10 17:29:38] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:30:05] IRQ: annoint=True anno=False
+[2026-06-10 17:30:05] ANNO STOP  | cluster=0x42 | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x48B1 ID2=0x0007
+[2026-06-10 17:34:39] ... aktiv. FIC=100% RSSI=40dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:39:39] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:44:39] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:49:39] ... aktiv. FIC=100% RSSI=38dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:54:39] ... aktiv. FIC=100% RSSI=35dBuV audio=0.0dBFS mute=nein
+[2026-06-10 17:59:10] IRQ: annoint=True anno=True
+[2026-06-10 17:59:10] ANNO START | cluster=0x42 | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x48B1 ID2=0x0007
+[2026-06-10 17:59:10]   *** ZIELSENDER (lokal in 12C): SRF 1 ZH SH+  (comp=0x0007)
+[2026-06-10 17:59:39] ... aktiv. FIC=100% RSSI=35dBuV audio=0.0dBFS mute=nein
+[2026-06-10 18:00:05] IRQ: annoint=True anno=False
+[2026-06-10 18:00:05] ANNO STOP  | cluster=0x42 | src=0 (eigenes Ensemble) | typ=Traffic | ID1=0x48B1 ID2=0x0007
+[2026-06-10 18:04:40] ... aktiv. FIC=100% RSSI=35dBuV audio=0.0dBFS mute=nein
+[2026-06-10 18:06:16] Beendet durch Benutzer (Strg-C).
+[2026-06-10 18:06:16] SPI geschlossen (GPIO-Pins unverändert, kein cleanup).

@@ -1,0 +1,169 @@
+[2026-06-10 23:49:26] ========================================================================
+[2026-06-10 23:49:26] OES-Logger – Fall (c) auf BERN1 untersuchen
+[2026-06-10 23:49:26] Station: BERN1  Kanal=8B  SID=0x4F08  CID=0x3  freq_index=13
+[2026-06-10 23:49:34] Auf BERN1 (8B) – Audio aktiv.
+[2026-06-10 23:49:34] enable_announcements() OK – warte auf Durchsagen …
+[2026-06-10 23:59:34] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 00:09:34] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 00:19:34] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 00:29:35] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 00:39:35] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 00:49:35] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 00:59:36] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 01:09:36] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 01:19:36] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 01:29:36] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 01:39:37] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 01:49:37] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 01:59:37] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 02:09:37] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 02:19:38] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 02:29:38] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 02:39:38] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 02:49:38] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 02:59:39] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 03:09:39] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 03:19:39] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 03:29:39] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 03:39:40] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 03:49:40] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 03:59:40] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 04:09:40] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 04:19:40] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 04:29:41] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 04:39:41] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 04:49:41] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 09:13:54] ========================================================================
+[2026-06-11 09:13:54] OES-Logger – Fall (c) auf BERN1 untersuchen
+[2026-06-11 09:13:54] Station: BERN1  Kanal=8B  SID=0x4F08  CID=0x3  freq_index=13
+[2026-06-11 09:14:04] Auf BERN1 (8B) – Audio aktiv.
+[2026-06-11 09:14:04] enable_announcements() OK – warte auf Durchsagen …
+[2026-06-11 09:14:04] ──────────── ANNO START ────────────
+[2026-06-11 09:14:04] 0xB6  src=0  anno_stat=1  ASW=0x0002  ID1=0x4F08  ID2=0x0003
+[2026-06-11 09:14:04]       RAW16: 80 80 00 C0 00 00 3D 18 02 00 08 4F 03 00 00 00
+[2026-06-11 09:14:04]    → (b) IN-BAND – Ziel = BERN1, KEIN Umschalten nötig
+[2026-06-11 09:14:05] Beende – sauberer Shutdown (Manager.close).
+[2026-06-11 09:14:31] ========================================================================
+[2026-06-11 09:14:31] OES-Logger – Fall (c) auf BERN1 untersuchen
+[2026-06-11 09:14:31] Station: BERN1  Kanal=8B  SID=0x4F08  CID=0x3  freq_index=13
+[2026-06-11 09:14:39] Auf BERN1 (8B) – Audio aktiv.
+[2026-06-11 09:14:39] enable_announcements() OK – warte auf Durchsagen …
+[2026-06-11 09:14:39] ──────────── ANNO START ────────────
+[2026-06-11 09:14:39] 0xB6  src=0  anno_stat=1  ASW=0x0002  ID1=0x4F08  ID2=0x0003
+[2026-06-11 09:14:39]       RAW16: 80 80 00 C0 00 00 3D 18 02 00 08 4F 03 00 00 00
+[2026-06-11 09:14:39]    → (b) IN-BAND – Ziel = BERN1, KEIN Umschalten nötig
+[2026-06-11 09:14:40] Beende – sauberer Shutdown (Manager.close).
+[2026-06-11 10:04:01] ========================================================================
+[2026-06-11 10:04:01] OES-Logger – Fall (c) auf BERN1 untersuchen
+[2026-06-11 10:04:01] Station: BERN1  Kanal=8B  SID=0x4F08  CID=0x3  freq_index=13
+[2026-06-11 10:04:09] Auf BERN1 (8B) – Audio aktiv.
+[2026-06-11 10:04:09] enable_announcements() OK – warte auf Durchsagen …
+[2026-06-11 10:14:09] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 10:24:09] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 10:34:10] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 10:44:10] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 10:54:10] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 11:04:10] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 11:14:11] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 11:24:11] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 11:34:11] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 11:44:11] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 11:54:12] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 12:04:12] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 12:14:12] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 12:24:12] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 12:34:13] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 12:44:13] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 12:54:13] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 13:04:13] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 13:14:14] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 13:24:14] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 13:34:14] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 13:44:15] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 13:54:15] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 14:04:15] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 14:14:15] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 14:49:07] ========================================================================
+[2026-06-11 14:49:07] OES-Logger – Fall (c) auf BERN1 untersuchen
+[2026-06-11 14:49:07] Station: BERN1  Kanal=8B  SID=0x4F08  CID=0x3  freq_index=13
+[2026-06-11 14:49:15] Auf BERN1 (8B) – Audio aktiv.
+[2026-06-11 14:49:15] enable_announcements() OK – warte auf Durchsagen …
+[2026-06-11 14:59:15] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 15:09:15] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 15:19:16] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 15:29:16] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 15:34:44] Beende – sauberer Shutdown (Manager.close).
+[2026-06-11 15:35:39] ========================================================================
+[2026-06-11 15:35:39] OES-Logger – Fall (c) auf BERN1 untersuchen
+[2026-06-11 15:35:39] Station: BERN1  Kanal=8B  SID=0x4F08  CID=0x3  freq_index=13
+[2026-06-11 15:35:47] Auf BERN1 (8B) – Audio aktiv.
+[2026-06-11 15:35:47] enable_announcements() OK – warte auf Durchsagen …
+[2026-06-11 15:45:48] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 15:55:48] … läuft, höre BERN1, bisher keine OES-Durchsage.
+[2026-06-11 16:02:30] ──────────── ANNO START ────────────
+[2026-06-11 16:02:30] 0xB6  src=0  anno_stat=1  ASW=0x0002  ID1=0x4F08  ID2=0x0003
+[2026-06-11 16:02:30]       RAW16: 80 80 00 C0 00 00 3D 18 02 00 08 4F 03 00 00 00
+[2026-06-11 16:02:30]    → (b) IN-BAND – Ziel = BERN1, KEIN Umschalten nötig
+[2026-06-11 16:02:30] Beende – sauberer Shutdown (Manager.close).
+[2026-06-11 17:08:36] ========================================================================
+[2026-06-11 17:08:36] OES-Logger v2 – Fall (c) auf BERN1 untersuchen
+[2026-06-11 17:08:36] Station: BERN1  Kanal=8B  SID=0x4F08  CID=0x3  freq_index=13
+[2026-06-11 17:08:44] Auf BERN1 (8B) – Audio aktiv.
+[2026-06-11 17:08:44] enable_announcements() OK – warte auf Durchsagen …
+[2026-06-11 17:18:44] … läuft – 1192 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 17:28:44] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 17:31:40] ──────────── ANNO START ────────────
+[2026-06-11 17:31:40] 0xB6  src=0  anno_stat=1  ASW=0x0002  ID1=0x4F08  ID2=0x0003
+[2026-06-11 17:31:40]       RAW16: 80 80 00 C0 00 00 3D 18 02 00 08 4F 03 00 00 00
+[2026-06-11 17:31:40]    → (b) IN-BAND – Ziel = BERN1, KEIN Umschalten nötig
+[2026-06-11 17:31:40]    (0xB6 nicht lesbar – evtl. Durchsage beendet: Si4689 meldet Kommandofehler (Status=0xC0).)
+[2026-06-11 17:31:41]    (0xB6 nicht lesbar – evtl. Durchsage beendet: Si4689 meldet Kommandofehler (Status=0xC0).)
+[2026-06-11 17:31:41]    (0xB6 nicht lesbar – evtl. Durchsage beendet: Si4689 meldet Kommandofehler (Status=0xC0).)
+[2026-06-11 17:31:42]    (0xB6 nicht lesbar – evtl. Durchsage beendet: Si4689 meldet Kommandofehler (Status=0xC0).)
+[2026-06-11 17:31:42]    (0xB6 nicht lesbar – evtl. Durchsage beendet: Si4689 meldet Kommandofehler (Status=0xC0).)
+[2026-06-11 17:31:43]    (0xB6 nicht lesbar – evtl. Durchsage beendet: Si4689 meldet Kommandofehler (Status=0xC0).)
+[2026-06-11 17:32:03] ──────────── ANNO STOPP ────────────
+[2026-06-11 17:38:45] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 17:47:14] Beende – sauberer Shutdown (Manager.close).
+[2026-06-11 17:47:18] ========================================================================
+[2026-06-11 17:47:18] OES-Logger v2 – Fall (c) auf BERN1 untersuchen
+[2026-06-11 17:47:18] Station: BERN1  Kanal=8B  SID=0x4F08  CID=0x3  freq_index=13
+[2026-06-11 17:47:27] Auf BERN1 (8B) – Audio aktiv.
+[2026-06-11 17:47:27] enable_announcements() OK – warte auf Durchsagen …
+[2026-06-11 17:57:27] … läuft – 1192 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 18:02:28] ──────────── ANNO START ────────────
+[2026-06-11 18:02:28] 0xB6  src=0  anno_stat=1  ASW=0x0002  ID1=0x4F08  ID2=0x0003
+[2026-06-11 18:02:28]       RAW16: 80 80 00 C0 00 00 3D 18 02 00 08 4F 03 00 00 00
+[2026-06-11 18:02:28]    → (b) IN-BAND – Ziel = BERN1, KEIN Umschalten nötig
+[2026-06-11 18:02:28]    Nachproben beendet – 0xB6 nicht mehr verfügbar (Durchsage-Inhalt weg, ok).
+[2026-06-11 18:02:48] ──────────── ANNO STOPP ────────────
+[2026-06-11 18:07:27] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 18:17:28] … läuft – 1192 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 18:27:28] … läuft – 1196 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 18:32:19] ──────────── ANNO START ────────────
+[2026-06-11 18:32:19] 0xB6  src=0  anno_stat=0  ASW=0x0002  ID1=0x4F08  ID2=0x0003
+[2026-06-11 18:32:19]       RAW16: 80 80 00 C0 00 01 3D 10 02 00 08 4F 03 00 00 00
+[2026-06-11 18:32:19]    → (b) IN-BAND – Ziel = BERN1, KEIN Umschalten nötig
+[2026-06-11 18:32:20]    Nachproben beendet – 0xB6 nicht mehr verfügbar (Durchsage-Inhalt weg, ok).
+[2026-06-11 18:32:39] ──────────── ANNO STOPP ────────────
+[2026-06-11 18:37:28] … läuft – 1196 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 18:47:29] … läuft – 1196 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 18:57:29] … läuft – 1193 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 19:07:30] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 19:17:30] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 19:27:30] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 19:37:31] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 19:47:31] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 19:57:31] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 20:07:31] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 20:17:32] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 20:27:32] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 20:37:32] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 20:47:32] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 20:57:33] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 21:07:33] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 21:17:33] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 21:27:33] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 21:37:34] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 21:47:34] … läuft – 1191 Polls/10min, anno aktuell=0, keine OES-Durchsage.
+[2026-06-11 21:55:59] Beende – sauberer Shutdown (Manager.close).

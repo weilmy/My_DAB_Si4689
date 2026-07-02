@@ -1,0 +1,30 @@
+2026-06-15 19:48:00,716 - CRITICAL - Unbehandelter Fehler: [Errno 5] Eingabe-/Ausgabefehler
+Traceback (most recent call last):
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 2199, in <module>
+    app.mainloop()
+    ~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 1602, in mainloop
+    self.tk.mainloop(n)
+    ~~~~~~~~~~~~~~~~^^^
+  File "/usr/lib/python3.13/tkinter/__init__.py", line 2066, in __call__
+    def __call__(self, *args):
+    
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 576, in _on_sighup
+    print(
+    ~~~~~^
+        f"Signal {signum} empfangen, App bleibt aktiv (SIGHUP ignoriert). "
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"{_session_info()}"
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+OSError: [Errno 5] Eingabe-/Ausgabefehler
+2026-06-15 19:48:00,737 - ERROR - Fehler beim Schliessen der App: [Errno 5] Eingabe-/Ausgabefehler
+Traceback (most recent call last):
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 2207, in <module>
+    app.on_close()
+    ~~~~~~~~~~~~^^
+  File "/home/weilmy/My_DAB_Si4689/main.py", line 1302, in on_close
+    print("=== Shutdown gestartet ===", flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 5] Eingabe-/Ausgabefehler

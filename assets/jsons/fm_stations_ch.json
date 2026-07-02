@@ -1,0 +1,9 @@
+[
+  { "freq_mhz": 88.9,  "name": "Radio BeO",      "short": "BeO",      "region": "Oberland" },
+  { "freq_mhz": 89.4,  "name": "Radio Freiburg", "short": "Freiburg", "region": "Freiburg" },
+  { "freq_mhz": 95.6,  "name": "Rabe",           "short": "Rabe",     "region": "Bern" },
+  { "freq_mhz": 97.7,  "name": "BERN1",          "short": "BERN1",    "region": "Bern" },
+  { "freq_mhz": 101.7, "name": "Energy Bern",    "short": "ENERGY",   "region": "Bern" },
+  { "freq_mhz": 106.9, "name": "Radio Freiburg", "short": "Freiburg", "region": "Freiburg" }
+]
+

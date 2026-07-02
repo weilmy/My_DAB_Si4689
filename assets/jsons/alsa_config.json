@@ -1,0 +1,71 @@
+{
+  "_info": "HifiBerry DAC+ADC Pro (PCM5122) Playback Controls. SoftMaster (GUI-Slider) und ADC-Controls werden separat verwaltet.",
+  "_saved": "2026-05-22 10:53",
+  "controls": [
+    {
+      "name": "Digital",
+      "type": "pct",
+      "value": "94%"
+    },
+    {
+      "name": "Analogue",
+      "type": "pct",
+      "value": "0%"
+    },
+    {
+      "name": "Analogue Playback Boost",
+      "type": "pct",
+      "value": "0%"
+    },
+    {
+      "name": "DSP Program",
+      "type": "enum",
+      "value": "FIR interpolation with de-emphasis"
+    },
+    {
+      "name": "Deemphasis",
+      "type": "bool",
+      "value": "on"
+    },
+    {
+      "name": "Auto Mute",
+      "type": "bool",
+      "value": "on"
+    },
+    {
+      "name": "Auto Mute Mono",
+      "type": "bool",
+      "value": "on"
+    },
+    {
+      "name": "Auto Mute Time Left",
+      "type": "enum",
+      "value": "21ms"
+    },
+    {
+      "name": "Auto Mute Time Right",
+      "type": "enum",
+      "value": "21ms"
+    },
+    {
+      "name": "Volume Ramp Down Rate",
+      "type": "enum",
+      "value": "1 sample/update"
+    },
+    {
+      "name": "Volume Ramp Down Step",
+      "type": "enum",
+      "value": "1dB/step"
+    },
+    {
+      "name": "Volume Ramp Up Rate",
+      "type": "enum",
+      "value": "1 sample/update"
+    },
+    {
+      "name": "Volume Ramp Up Step",
+      "type": "enum",
+      "value": "1dB/step"
+    }
+  ]
+}
