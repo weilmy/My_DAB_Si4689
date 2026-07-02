@@ -233,7 +233,7 @@ tabulate==0.10.0
 
 ## Lizenz
 
-[ergänzen: z. B. MIT, GPLv3]
+MIT
 
 ## Status
 
