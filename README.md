@@ -139,31 +139,27 @@ Der Si4689 ist **WorldDMB Profile 1** und liefert keine OE-Announcements (FIG 0/
 
 Auf echter Hardware wurden vier Fälle empirisch verifiziert:
 
-**Fall (b):** aktueller Sender und TA-Zielsender sind identisch (SRF 1 BE FR VS+, kein Wechsel möglich/nötig)
+**Fall (b):** aktueller Sender und TA-Zielsender sind identisch (SRF 1 BE FR VS+, kein Wechsel nötig)
 
 ![TA-Fenster: Fall (b)](docs/screenshot_ta_fall_b.png)
 
-**Fall (c):** aktueller Sender und TA-Zielsender unterscheiden sich, liegen aber im selben Ensemble (aktuell SRF 3+, Ziel SRF 1 ZH SH+, beide im Ensemble SRG SSR F01/12A) → Wechsel via `dab_start_service`
+**Fall (c):** aktueller Sender und TA-Zielsender unterscheiden sich, liegen aber im selben Ensemble (aktuell SRF 3+, Ziel SRF 1 ZH SH+, beide im Ensemble SRG SSR F01/12A)
 
 ![TA-Fenster: Fall (c)](docs/screenshot_ta_fall_c.png)
 
-**Fall (d):** aktueller Sender und TA-Zielsender liegen in unterschiedlichen Ensembles (aktuell BERN1 im Ensemble SMC D03 BE-FR/8B, Ziel-SID in einem anderen Ensemble/Kanal) → Hinweisfenster, kein automatisches Umschalten
+**Fall (d):** aktueller Sender und TA-Zielsender liegen in unterschiedlichen Ensembles (aktuell BERN1 im Ensemble SMC D03 BE-FR/8B, Ziel-SID in Ensemble/Kanal SRG SSR D01/12C)
 
 ![TA-Fenster: Fall (d)](docs/screenshot_ta_fall_d.png)
 
 ```
-[TA] Fall (d) erkannt – Cross-Channel-Ziel 0x43B3
-     auf Kanal 12A (aktuell 8B), kein Umschalten.
-[TA] Durchsage aktiv – Fenster + TA-Lautstärke.
-[TA] zurück auf Heimsender (BERN1).
-```
+
 
 | Fall | Beschreibung | Verhalten |
 |---|---|---|
 | **(a)** | Angesagt, aber ohne ANNO-Flag | nicht erkennbar / kein Trigger |
 | **(b)** | ANNO-Ziel = aktueller Sender | kein Wechsel nötig — bestätigt (siehe Screenshot oben) |
 | **(c)** | ANNO-Ziel im selben Ensemble, anderer Sender | Wechsel via `dab_start_service` — bestätigt (siehe Screenshot oben) |
-| **(d)** | ANNO-Ziel in anderem Ensemble/Kanal (Cross-Channel) | Hinweisfenster, kein automatischer Wechsel — bestätigt (siehe Screenshot oben) |
+| **(d)** | ANNO-Ziel in anderem Ensemble/Kanal (Cross-Channel) | Wechsel via `dab_start_service` — bestätigt (siehe Screenshot oben) |
 
 **Bekannter Bug & Fix:** Bei einer SID, die in mehreren Ensembles vorkommt (z. B. SRF 3+ gleichzeitig in Kanal 12A und 12C), wurde Fall (d) fälschlich erkannt. Die Lösung: `_ta_target_info` lädt alle DB-Zeilen für die SID und bevorzugt die Zeile, die zum aktuellen `_current_channel` passt, statt einfach die erste Treffer-Zeile zu nehmen.
 
