@@ -434,7 +434,13 @@ class Audio_Codec:
                     stderr=subprocess.STDOUT,
                     close_fds=True,
                 )
-                time.sleep(0.3)
+                # Gepolltes Warten statt fixer Sleep: schnell bei OK,
+                # aber bis zu 1.5s Toleranz für langsamen DAPM-Power-Up
+                # (PCM1863 braucht nach Kaltstart/Si4689-Init länger als 300ms).
+                for _ in range(15):
+                    if self.proc.poll() is not None:
+                        break
+                    time.sleep(0.1)
 
                 if not self.is_running():
                     print("❌ Pipeline beendet sich sofort nach Start!")
