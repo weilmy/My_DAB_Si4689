@@ -139,7 +139,7 @@ Der Si4689 ist **WorldDMB Profile 1** und liefert keine OE-Announcements (FIG 0/
 
 Auf echter Hardware wurden vier Fälle empirisch verifiziert:
 
-**Fall (b):** aktueller Sender und TA-Zielsender sind identisch (SRF 1 BE FR VS+, kein Wechsel nötig)
+**Fall (b):** aktueller Sender und TA-Zielsender sind identisch (SRF 1 BE FR VS+, kein Wechsel möglich/nötig)
 
 ![TA-Fenster: Fall (b)](docs/screenshot_ta_fall_b.png)
 
@@ -153,6 +153,7 @@ Auf echter Hardware wurden vier Fälle empirisch verifiziert:
 
 ```
 
+```
 
 | Fall | Beschreibung | Verhalten |
 |---|---|---|
