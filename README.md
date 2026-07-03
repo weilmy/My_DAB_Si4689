@@ -15,6 +15,7 @@ Es gibt bereits gute Web-UI/CLI-Lösungen für den Si4689 auf dem Raspberry Pi (
 
 - **Native Tkinter-GUI** auf einem angeschlossenen 10.1"-Display statt Web-Interface
 - **Vollständiger Traffic-Announcement (TA)-Support** inkl. aller vier empirisch verifizierten Fälle (siehe unten) – dazu findet sich in der öffentlichen Dokumentation praktisch nichts
+- **Gelöster GPIO20-Bus-Konflikt** zwischen Si4689 und PCM1863 (HiFiBerry DAC+ADC Pro) – relevant für jeden, der die DAB HAT mit einer aufnahmefähigen Soundkarte kombiniert (siehe unten)
 - **Eigene SQLite-Sender-Datenbank** mit Multi-Ensemble-Handling
 - **Schweizer Verkehrsfunk-Integration** (DATEX-II/SOAP über opentransportdata.swiss)
 - Läuft seit dem 18.06.2026 stabil im Dauerbetrieb auf echter Hardware
@@ -169,6 +170,43 @@ Auf echter Hardware wurden vier Fälle empirisch verifiziert:
 **Architekturhinweis:** Die GPIO23-Interrupt-Architektur wird für DLS- und ANNO-Events genutzt. Zusätzlich läuft ein 1-Hz-Polling für TA, weil die offene Drain-INT-Leitung des Si4689 durch kontinuierliche DSRVINT/DLS-Pakete tief gehalten wird und dadurch ANNO-Flankenwechsel maskieren kann.
 
 `dab_start_service` erfordert vorher eine FIC-Qualität ≥ 90 % (aktiv abfragen) sowie `stc_ack=True`, um ein anstehendes STCINT zu quittieren.
+
+---
+
+## Highlight: GPIO20-Bus-Konflikt (Si4689 + PCM1863) lösen
+
+Ein Problem, das vermutlich jeden trifft, der die RaspiAudio DAB HAT mit einer **aufnahmefähigen** Soundkarte (wie der HiFiBerry DAC+ADC Pro) kombiniert – aber nirgends dokumentiert ist. Diese Lösung hat uns erheblichen Zeit- und Testaufwand gekostet.
+
+**Das Problem:** Der Si4689 gibt sein I2S-Audiosignal auf `DOUT` aus, das mit **GPIO20** verdrahtet ist. Der PCM1863-ADC auf der HiFiBerry-Karte treibt seinen eigenen I2S-`DOUT` **ebenfalls** auf GPIO20. Beide Chips senden gleichzeitig auf derselben Leitung – ein klassischer Bus-Konflikt, der sich als permanente Audio-Verzerrung äussert.
+
+**Was nicht funktioniert hat:**
+- PCM1863 per ALSA-Mixer stummschalten (`amixer sset "ADC Left Input" "No Select"`, Lautstärke auf 0) reduziert die Störung, verhindert aber nicht, dass der Chip elektrisch weiter auf GPIO20 sendet – nur eben Nullen statt Nutzdaten. Der Bus-Konflikt bleibt bestehen.
+- Direktes Schreiben ins Power-Down-Register per `i2cset` schlägt fehl, da der Kernel-Treiber das I2C-Gerät exklusiv sperrt (`i2cdetect` zeigt `UU`): `Error: Could not set address to 0x4a: Device or resource busy`
+- Kernel-Modul entladen (`modprobe -r`) reisst die komplette HiFiBerry-ALSA-Karte ab, inklusive DAC-Ausgang – keine Option im laufenden Betrieb.
+- Das ASoC-Debugfs-Interface (`codec_reg`), das normalerweise direkten Registerzugriff erlaubt, ist für diesen Codec im aktuellen Raspberry Pi OS-Kernel nicht verfügbar.
+
+**Die Lösung:** `smbus2` mit `force=True` nutzt den `I2C_SLAVE_FORCE`-ioctl statt `I2C_SLAVE` und umgeht damit die exklusive Kernel-Sperre – ganz ohne Treiber zu entladen oder die ALSA-Karte zu stören:
+
+```python
+import smbus2
+bus = smbus2.SMBus(1, force=True)
+bus.write_byte_data(0x4A, 0x70, 0x01)  # PCM1863 Power-Down → DOUT Hi-Z
+bus.close()
+```
+
+Register `0x70` (Power-Down Control, PWRDN-Bit) versetzt den PCM1863 in Power-Down – `DOUT` geht in den hochohmigen Zustand (Hi-Z), der Si4689 treibt GPIO20 unangefochten, die Verzerrung verschwindet vollständig.
+
+**Wichtig:** Dieser Aufruf muss **zweimal** erfolgen – einmal beim Programmstart, und ein zweites Mal **ca. 500 ms nach dem Öffnen des ALSA-Capture-Streams**, da das ASoC-DAPM-Framework den Codec beim Stream-Open wieder hochfährt und das Register zurücksetzt (siehe `_unmute_adc()`/`_pcm186x_dout_disable()`-Aufrufe in `audio_codec_hifiberry.py`).
+
+**Verifikation:**
+```python
+bus = smbus2.SMBus(1, force=True)
+val = bus.read_byte_data(0x4A, 0x70)
+print("Hi-Z" if val & 1 else "DOUT still active")
+bus.close()
+```
+
+Diese Erkenntnis wurde auch als Feedback an das RaspiAudio-Entwicklerteam gemeldet, in der Hoffnung, dass sie zukünftigen Nutzern der DAB HAT mit aufnahmefähigen Soundkarten hilft.
 
 ---
 
