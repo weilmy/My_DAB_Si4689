@@ -283,14 +283,19 @@ class Page07(BasePage):
         self.epg_manager = None
         self.epg_widgets = []
         
-        # Sender-Mapping: Key -> tune_idx (nur Radio-Sender)
-        self.station_tune_idx = {
-            'srf_1': 91,
-            'srf_2': 87,
-            'srf_3': 84,
-            'srf_4': 85,
-            'srf_Musikwelle': 93,
-            'srf_Virus': 86,
+        # Sender-Mapping: Key -> exakter Sendername in si4689_datenbank (nur Radio-Sender)
+        # WICHTIG: tune_idx wird NICHT mehr hartcodiert (si4689_idx verschiebt sich
+        # bei jedem Rescan). Stattdessen wird der aktuelle Index bei jedem Klick
+        # live über den Namen in self.app._scan_data nachgeschlagen (siehe
+        # _resolve_tune_idx()). Bei mehreren Regional-Varianten (z.B. SRF 1 ZH SH+,
+        # SRF 1 BE FR VS+, ...) hier die exakte, bei dir empfangene Variante eintragen.
+        self.station_names = {
+            'srf_1': 'SRF 1 BE FR VS+',     # ggf. an deine Region anpassen
+            'srf_2': 'SRF 2 Kultur+',
+            'srf_3': 'SRF 3+',
+            'srf_4': 'SRF 4 News+',
+            'srf_Musikwelle': 'SRF Musikwelle+',
+            'srf_Virus': 'SRF Virus+',
             # TV-Sender haben keine tune_idx
             'tv_srf_1': None,
             'tv_srf_2': None,
@@ -338,13 +343,37 @@ class Page07(BasePage):
         self.tv_srf_Info = img_mgr.load_image('main_tv_srf_Info', cfg["tv_srf_Info"], resize=(44, 44))
         self.markierung_img = tk.PhotoImage(file='/home/weilmy/My_DAB_Si4689/assets/pictures/Markierung.png')
 
+    def _resolve_tune_idx(self, station_key):
+        """
+        Löst den AKTUELLEN tune_idx live über den Sendernamen auf, statt einen
+        gecachten Index zu verwenden. Durchsucht self.app._scan_data (die exakte
+        Liste, auf die tune_service(index) zugreift) nach exaktem Namens-Treffer.
+
+        Wird der Name nach einem Rescan nicht mehr gefunden (Sender aus dem
+        Sendegebiet verschwunden), wird None zurückgegeben statt eines falschen
+        Index. Bei mehreren Treffern mit demselben Namen (sollte laut Schema
+        nicht vorkommen, da si4689_idx UNIQUE) wird der erste genommen.
+        """
+        name = self.station_names.get(station_key)
+        if name is None:
+            return None
+
+        scan_data = getattr(self.app, "_scan_data", None) or []
+        for idx, entry in enumerate(scan_data):
+            entry_name = entry.get("label") or entry.get("name")
+            if entry_name == name:
+                return idx
+
+        print(f"⚠️ EPG: Sender '{name}' ({station_key}) aktuell nicht im Sendegebiet gefunden")
+        return None
+
     def _on_station_click(self, station_key):
         """Handler für Klick auf Sender (Icon oder Canvas)"""
-        tune_idx = self.station_tune_idx.get(station_key)
-        
+        tune_idx = self._resolve_tune_idx(station_key)
+
         if tune_idx is None:
-            # TV-Sender oder ungültiger Key
-            print(f"ℹ️ {station_key}: Keine tune_idx (TV-Sender oder nicht verfügbar)")
+            # TV-Sender, ungültiger Key, oder Sender aktuell nicht empfangbar
+            print(f"ℹ️ {station_key}: Keine tune_idx (TV-Sender, unbekannter Key, oder Sender nicht im Scan)")
             return
         
         # Radio-Sender: tune_service aufrufen
@@ -407,8 +436,8 @@ class Page07(BasePage):
             epg_canvas.bind("<Button-1>", click_handler)
             
             # Cursor ändern für besseres UX (nur bei Radio-Sendern)
-            tune_idx = self.station_tune_idx.get(key)
-            if tune_idx is not None:
+            has_radio_mapping = self.station_names.get(key) is not None
+            if has_radio_mapping:
                 icon.configure(cursor="hand2")
                 epg_canvas.configure(cursor="hand2")
 
