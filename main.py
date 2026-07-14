@@ -37,6 +37,64 @@ locale.setlocale(locale.LC_ALL, 'de_CH.utf8')
 
 BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 
+# =============================================================================
+# DAB "Complete EBU Latin based repertoire" (ETSI TS 101 756 V2.4.1, Annex C)
+# Charset-Indikator 0000b in FIG Type 1 / Dynamic Label. WICHTIG: Das ist NICHT
+# identisch mit ISO-8859-1/Latin-1! Im Bereich 0x80-0xFF weichen die Zuordnungen
+# komplett ab (z.B. 0x82 = 'é' in EBU Latin, aber ein unsichtbares C1-Steuerzeichen
+# in Latin-1 -> Zeichen verschwinden kommentarlos statt als Mojibake aufzufallen).
+# Reservierte/undefinierte Codes (0x00, 0x0A, 0x0B, 0x1F) werden als '' abgebildet.
+# =============================================================================
+_EBU_LATIN_TABLE = (
+    "\u0000\u0118\u012E\u0172\u0102\u0116\u010E\u0218\u021A\u010A\u0000\u0000\u0120\u0139\u017B\u0143"
+    "\u0105\u0119\u012F\u0173\u0103\u0117\u010F\u0219\u021B\u010B\u0147\u011A\u0121\u013A\u017C\u0000"
+    " !\"#\u0142%&'()*+,-./"
+    "0123456789:;<=>?"
+    "@ABCDEFGHIJKLMNO"
+    "PQRSTUVWXYZ[\u016E]\u0141_"
+    "\u0104abcdefghijklmno"
+    "pqrstuvwxyz\u00AB\u016F\u00BB\u013D\u0126"
+    "\u00E1\u00E0\u00E9\u00E8\u00ED\u00EC\u00F3\u00F2\u00FA\u00F9\u00D1\u00C7\u015E\u00DF\u00A1\u0178"
+    "\u00E2\u00E4\u00EA\u00EB\u00EE\u00EF\u00F4\u00F6\u00FB\u00FC\u00F1\u00E7\u015F\u011F\u0131\u00FF"
+    "\u0136\u0145\u00A9\u0122\u011E\u011B\u0148\u0151\u0150\u20AC\u00A3\u0024\u0100\u0112\u012A\u016A"
+    "\u0137\u0146\u013B\u0123\u013C\u0130\u0144\u0171\u0170\u00BF\u013E\u00B0\u0101\u0113\u012B\u016B"
+    "\u00C1\u00C0\u00C9\u00C8\u00CD\u00CC\u00D3\u00D2\u00DA\u00D9\u0158\u010C\u0160\u017D\u00D0\u013F"
+    "\u00C2\u00C4\u00CA\u00CB\u00CE\u00CF\u00D4\u00D6\u00DB\u00DC\u0159\u010D\u0161\u017E\u0111\u0140"
+    "\u00C3\u00C5\u00C6\u0152\u0177\u00DD\u00D5\u00D8\u00DE\u014A\u0154\u0106\u015A\u0179\u0164\u00F0"
+    "\u00E3\u00E5\u00E6\u0153\u0175\u00FD\u00F5\u00F8\u00FE\u014B\u0155\u0107\u015B\u017A\u0165\u0127"
+)
+assert len(_EBU_LATIN_TABLE) == 256, f"EBU-Latin-Tabelle muss 256 Einträge haben, hat {len(_EBU_LATIN_TABLE)}"
+
+
+def decode_dab_text(raw: bytes, charset_id: int) -> str:
+    """
+    Dekodiert DAB-Textfelder (DLS, Ensemble-/Service-Label, MOT ContentName)
+    unter Berücksichtigung des DAB-spezifischen Charset-Indikators.
+
+    charset_id ist der 4-Bit-Wert aus b7..b4 des Charset-Felds:
+      0  -> Complete EBU Latin based repertoire (Annex C, NICHT Latin-1!)
+      15 -> UTF-8
+      4,6,8,9,10,11,12 -> ISO-8859-x-Varianten (ETSI EN 300 401 Charset-Tabelle)
+    Unbekannte/undokumentierte Werte fallen defensiv auf EBU-Latin-Tabelle zurück,
+    da das der DAB-Standard-Default ist (nicht Latin-1).
+    """
+    if charset_id == 0:
+        return "".join(_EBU_LATIN_TABLE[b] for b in raw)
+    iso_map = {4: "iso-8859-2", 6: "iso-8859-4", 8: "iso-8859-5",
+               9: "iso-8859-6", 10: "iso-8859-7", 11: "iso-8859-8", 12: "iso-8859-9"}
+    if charset_id == 15:
+        try:
+            return raw.decode("utf-8", errors="replace")
+        except (LookupError, UnicodeDecodeError):
+            return "".join(_EBU_LATIN_TABLE[b] for b in raw)
+    encoding = iso_map.get(charset_id)
+    if encoding:
+        try:
+            return raw.decode(encoding, errors="replace")
+        except (LookupError, UnicodeDecodeError):
+            pass
+    return "".join(_EBU_LATIN_TABLE[b] for b in raw)
+
 from pages import MainPage, Page01, Page02, Page03, Page04, Page05, Page06, Page07, Page08, Page09
 from hardware.si4689_driver import DAB_BAND_III, PROP_INT_CTL_ENABLE, PROP_DIGITAL_SERVICE_INT_SOURCE
 from hardware.si4689_init import Si4689Manager
@@ -843,9 +901,6 @@ class App(tk.Tk):
         si = getattr(self.si4689, "_radio", None)
         if si is None:
             return []
-        _CHARSET = {0: "latin-1", 4: "iso-8859-2", 6: "iso-8859-4", 8: "iso-8859-5",
-                    9: "iso-8859-6", 10: "iso-8859-7", 11: "iso-8859-8",
-                    12: "iso-8859-9", 15: "utf-8"}
         texts: list[str] = []
         try:
             deadline = time.monotonic() + 0.5
@@ -863,15 +918,12 @@ class App(tk.Tk):
                 if pkt.get("data_src") == 2:           # DLS
                     payload = pkt.get("payload", b"")
                     if len(payload) >= 3 and not (payload[0] & 0x10):
-                        enc = _CHARSET.get((payload[1] >> 4) & 0x0F, "latin-1")
+                        charset_id = (payload[1] >> 4) & 0x0F
                         raw = payload[2:]
                         nul = raw.find(b"\x00")
                         if nul >= 0:
                             raw = raw[:nul]
-                        try:
-                            t = raw.decode(enc, errors="replace").strip()
-                        except (LookupError, UnicodeDecodeError):
-                            t = raw.decode("latin-1", errors="replace").strip()
+                        t = decode_dab_text(raw, charset_id).strip()
                         if t and t not in texts:
                             texts.append(t)
                 if not more:
@@ -972,7 +1024,7 @@ class App(tk.Tk):
         Fall (a) — Sprecher liest ohne ANNO. Keine Signalisierung, technisch unsichtbar. Abgehakt.
         Fall (b) — ANNO, ID1 == aktueller Sender. In-band, kein Umschalten, nur Fenster + Lautstärke. Bewiesen mit BERN1 (ID1=0x4F08).
         Fall (c) — ANNO, ID1 == anderer Sender im selben Ensemble. Umschalten innerhalb des Ensembles (reiner dab_start_service, kein Retune). Bewiesen mit Swiss Pop+ → SRF 1 ZH SH+ (beide im 12C/SRG-Ensemble).
-        Fall (d) — ANNO, ID1 == anderer Sender in einem anderen Ensemble. Cross-Channel, braucht Retune in anderes Ensemble (z. B. 8B→7D).
+        Fall (d) — ANNO, ID1 == anderer Sender in einem anderen Ensemble. Cross-Channel, braucht Retune in anderes Ensemble. Bewiesen mit BERN1 (ID1=0x4F08) → SRF 1 ZH SH+ und Ensemble 8B → 7D
         """
         kind = action.kind
         if kind == "start":
@@ -998,12 +1050,12 @@ class App(tk.Tk):
                 # Ziel nicht in DB -> Kanal unbekannt, NICHT blind umschalten
                 print(f"[TA] Ziel 0x{tsid:04X} nicht in DB – Kanal unbekannt, kein Umschalten.")
             elif tchannel != self._current_channel:
-                # Fall (d): Ziel in ANDEREM Ensemble
+                # Fall (d): Ziel in ANDEREM Ensemble -> umschalten zum Zielsender in anderem Ensemble/Channel (z. B. 8B → 7D).
                 self.fallindicator = "Fall (d)"
                 print(f"[TA] Fall (d) erkannt – Cross-Channel-Ziel 0x{tsid:04X} "
                       f"auf Kanal {tchannel} (aktuell {self._current_channel}), umgeschaltet auf Träger in anderem Ensemble")
             else:
-                # Fall (c): Ziel im SELBEN Ensemble -> umschalten (kein Retune nötig)
+                # Fall (c): Ziel im SELBEN Ensemble -> umschalten zum Zielsender – bleibt in-band.
                 try:
                     self.fallindicator = "Fall (c)"
                     if self._current_sid is not None:
@@ -1023,12 +1075,12 @@ class App(tk.Tk):
             try:
                 ta_vol = int(self.state.TA_Lautstaerke_DAB)
                 self.audio_codec.set_volume_amixer(ta_vol)
-                print(f" 🚦 TA-Lautstärke gesetzt: → {ta_vol}")
+                print(f"🚦TA-Lautstärke gesetzt: → {ta_vol}")
             except Exception as e:
                 print(f"[TA] set_volume_amixer Fehler: {e}")
 
             self.after(0, self._ta_open_window)
-            print("[TA] Durchsage aktiv – Fenster + TA-Lautstärke.")
+            print("🚦Durchsage aktiv – Fenster + TA-Lautstärke.")
 
         elif kind == "back":
             self._ta_back_to_home(reason=action.reason)
@@ -1040,7 +1092,7 @@ class App(tk.Tk):
         else:
             self._ta_home = None      # in-band: nichts umzuschalten
         self.audio_codec.set_volume_amixer(self.state.AktuelleLautstaerke_DAB)
-        print(f" 🚦 ✓ Lautstärke wiederhergestellt: {self.state.AktuelleLautstaerke_DAB}")
+        print(f"🚦✓ Lautstärke wiederhergestellt: {self.state.AktuelleLautstaerke_DAB}")
         self.after(0, self._ta_close_window)
         self._ta_active = False
         self._ta_switched = False
@@ -1656,11 +1708,6 @@ class App(tk.Tk):
         if page is None or si is None or not self.si4689.is_ready:
             return
 
-        _CHARSET_MAP: dict[int, str] = {
-            0: "latin-1",  4: "iso-8859-2",  6: "iso-8859-4",
-            8: "iso-8859-5", 9: "iso-8859-6", 10: "iso-8859-7",
-            11: "iso-8859-8", 12: "iso-8859-9", 15: "utf-8",
-        }
         DATA_SRC_DLS = 2
         new_texts: list[str] = []
 
@@ -1684,15 +1731,12 @@ class App(tk.Tk):
                     if pkt.get("data_src") == DATA_SRC_DLS:
                         payload: bytes = pkt.get("payload", b"")
                         if len(payload) >= 3 and not (payload[0] & 0x10):
-                            encoding = _CHARSET_MAP.get((payload[1] >> 4) & 0x0F, "latin-1")
+                            charset_id = (payload[1] >> 4) & 0x0F
                             raw = payload[2:]
                             null_pos = raw.find(b"\x00")
                             if null_pos >= 0:
                                 raw = raw[:null_pos]
-                            try:
-                                text = raw.decode(encoding, errors="replace").strip()
-                            except (LookupError, UnicodeDecodeError):
-                                text = raw.decode("latin-1", errors="replace").strip()
+                            text = decode_dab_text(raw, charset_id).strip()
                             if text and text not in new_texts:
                                 new_texts.append(text)
 
@@ -1835,11 +1879,6 @@ class App(tk.Tk):
         nach dem Aufruf garantiert HIGH ist und die nächste Falling Edge sauber
         ausgelöst wird.
         """
-        _CHARSET_MAP: dict = {
-            0: "latin-1", 4: "iso-8859-2", 6: "iso-8859-4",
-            8: "iso-8859-5", 9: "iso-8859-6", 10: "iso-8859-7",
-            11: "iso-8859-8", 12: "iso-8859-9", 15: "utf-8",
-        }
         DATA_SRC_DLS = 2
         new_texts: list[str] = []
 
@@ -1856,13 +1895,10 @@ class App(tk.Tk):
                 if pkt.get("data_src") == DATA_SRC_DLS:
                     payload: bytes = pkt.get("payload", b"")
                     if len(payload) >= 3 and not (payload[0] & 0x10):
-                        encoding = _CHARSET_MAP.get((payload[1] >> 4) & 0x0F, "latin-1")
+                        charset_id = (payload[1] >> 4) & 0x0F
                         raw = payload[2:].rstrip(b"\x00")
                         if raw:
-                            try:
-                                text = raw.decode(encoding, errors="replace").strip()
-                            except (LookupError, UnicodeDecodeError):
-                                text = raw.decode("latin-1", errors="replace").strip()
+                            text = decode_dab_text(raw, charset_id).strip()
                             if text and text not in new_texts:
                                 new_texts.append(text)
                 if not more:
